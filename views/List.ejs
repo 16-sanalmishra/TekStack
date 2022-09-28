@@ -1,0 +1,29 @@
+<body>
+    <table>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                TechStack
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </table>
+    <% userList.forEach(user => { %>
+    <tr>
+        <th>
+            <%= user['name'] %>
+        </th>
+        <th>
+            <%= user['techstack'] %>
+        </th>
+        <th>
+         <a href="/list/<%= user._id%>">Click here</a>
+        </th>
+
+    </tr>
+ <%  }) %>
+</body>
