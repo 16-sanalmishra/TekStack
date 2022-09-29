@@ -52,6 +52,11 @@ app.get("/list", asyncHandler((async(req, res)=> {
     console.log(userList);
     res.render("List", {userList: userList, userId})
 })))
+app.get("/delete/:id" , asyncHandler(async(req,res)=> {
+    const id = req.params.id;
+    await User.deleteOne({_id: id});
+    res.redirect("/success");
+}))
 
 const PORT  = process.env.PORT || 9000;
 app.listen(PORT,()=> {
